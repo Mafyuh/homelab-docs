@@ -16,5 +16,5 @@ curl -fsSL https://get.docker.com | sudo sh
 
 This installs Docker Engine (v2) along with Docker Compose
 
-{{< callout type="info" >}} You cannot use `docker-compose` commands and need to add a space to make it `docker compose` {{< /callout >}}
-
+> [!NOTE]
+> You cannot use `docker-compose` commands and need to add a space to make it `docker compose`
