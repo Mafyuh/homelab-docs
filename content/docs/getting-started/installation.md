@@ -19,4 +19,4 @@ This installs Docker Engine (v2) along with Docker Compose
 > [!NOTE]
 > You cannot use `docker-compose` commands and need to add a space to make it `docker compose`
 
-
+![[Pasted image 20250103023406.png]]
