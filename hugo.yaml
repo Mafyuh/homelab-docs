@@ -21,6 +21,9 @@ menu:
     - name: Docs
       pageRef: /docs
       weight: 1
+    - name: Repo ↗
+      url: "https://git.mafyuh.dev/mafyuh/iac"
+      weight: 3
     - name: Search
       weight: 4
       params:
