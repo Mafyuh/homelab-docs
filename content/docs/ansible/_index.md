@@ -8,5 +8,5 @@ draft: false
 weight: 800
 toc: true
 sidebar:
-  oepn: true
+  open: true
 ---

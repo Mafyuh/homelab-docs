@@ -9,7 +9,5 @@ Documentation for my [Homelab](https://git.mafyuh.dev/mafyuh/iac)
 
 {{< cards >}}
   {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="https://git.mafyuh.dev/mafyuh.iac" title="Repo" icon="codeberg" >}}
+  {{< card link="https://git.mafyuh.dev/mafyuh/iac" title="Repo" icon="codeberg" >}}
 {{< /cards >}}
-
-

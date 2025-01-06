@@ -11,11 +11,11 @@ Similar to Flux or ArgoCD in Kubernetes, this is my implementation of Continuous
 This implementation is entirely custom and built for my Homelab with numerous hosts. It has gone through 3 re-iterations, and probably will again in the future.
 
 The whole idea is I just want to merge a PR, and have my infrastructure update itself automatically. 
-# Current Implementation 
+##  Current Implementation 
 
 Link to current workflow https://git.mafyuh.dev/mafyuh/iac/src/branch/main/.forgejo/workflows/CD.yml
 
-## Breakdown
+### Breakdown
 
 I have various Docker hosts each with it's own Docker Compose stack. This setup allows me to have as many hosts as I want, just with a mapping to a DNS name.
 
@@ -29,7 +29,7 @@ I have various Docker hosts each with it's own Docker Compose stack. This setup 
 8. Creates SSH private key on Runner (from Bitwarden)
 9. Runs [Docker CD Ansible Playbook](https://git.mafyuh.dev/mafyuh/iac/src/branch/main/ansible/playbooks/deploy-docker.yml) passing through the `$folder`, `$target_host` and `$bws_access_key`
 
-## Playbook Steps
+### Playbook Steps
 
 Now that we know which Stack and which host to SSH into, we basically just SSH into the correct machine, grab the required `.env` variables from Bitwarden, create the `.env` file, and redeploy the Stack.
 
@@ -40,15 +40,15 @@ Now that we know which Stack and which host to SSH into, we basically just SSH i
 5. Uses Ansible built in Docker Compose plugin to restart the services
 6. The best way I have found other than having no errors on the previous step is to run `docker compose ps` to ensure the new version is running.
 
-# Previous Implementations
-## Initial Implementation
+## Previous Implementations
+### Initial Implementation
 Ran [this script](https://git.mafyuh.dev/mafyuh/Auto-Homelab/src/branch/main/scripts/dccd.sh) on each Docker hosts via Crontab, it basically just ran `git pull` and `docker compose up -d` and I had it run every 30 minutes. It did work, just with too many caveats.
 
 1. Hit Docker rate limits multiple times daily
 2. Wasn't very IaC
 3. Infrastructure could be out of date by 30 mins so didn't feel like a true CD option.
 
-## 2nd Implementation 
+### 2nd Implementation 
 
 N8N via webhooks
 
@@ -57,7 +57,7 @@ Before I understood Git and Bash fully, I used N8n to essentially just filter th
 Env variables were just set on the host manually.
 
 Link to JSON for N8N import https://git.mafyuh.dev/mafyuh/Auto-Homelab/src/branch/main/scripts/CD.json
-## 3rd Implementation
+### 3rd Implementation
 
 Link to workflow: https://git.mafyuh.dev/mafyuh/Auto-Homelab/src/branch/main/.forgejo/workflows/CD.yml
 
@@ -71,7 +71,7 @@ The logic for hitting the API was changed as it wasn't always catching logs here
 
 This is where I switched to raw Ansible using a custom Docker image and where the current implementation starts.
 
-# Why this vs. alternatives?
+## Why this vs. alternatives?
 
 While tools like Watchtower, Duin, and Harbormaster offer convenient container update functionalities, they require access to the Docker socket. Providing access to the Docker socket is generally considered a security risk as it grants significant control over the host system.
 
