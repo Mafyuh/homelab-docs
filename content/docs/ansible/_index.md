@@ -8,5 +8,5 @@ draft: false
 weight: 800
 toc: true
 sidebar:
-  collapsed: false
+  oepn: true
 ---

@@ -1,17 +1,15 @@
 ---
-title: My Site
+title: Homelab Docs
 toc: false
 ---
 
-This is the landing page.
+Documentation for my [Homelab](https://git.mafyuh.dev/mafyuh/iac)
 
 ## Explore
 
 {{< cards >}}
   {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
+  {{< card link="https://git.mafyuh.dev/mafyuh.iac" title="Repo" icon="codeberg" >}}
 {{< /cards >}}
 
-## Documentation
 
-For more information, visit [Hextra](https://imfing.github.io/hextra).

@@ -78,3 +78,5 @@ Install instructions for Forgejo are [here](https://forgejo.org/docs/latest/admi
 ## Loki (logs)
 
 A great video to get setup with Loki is available here
+
+{{< youtube h_GGd7HfKQ8 >}}
