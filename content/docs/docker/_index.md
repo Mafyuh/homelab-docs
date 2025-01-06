@@ -8,7 +8,7 @@ draft: false
 weight: 900
 toc: true
 sidebar:
-  collapsed: false
+  open: true
 ---
 
 
